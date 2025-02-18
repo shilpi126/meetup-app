@@ -5,8 +5,6 @@ import React from 'react'
 const MeetupList = () => {
     const router = useRouter()
 
-    
-
     const data = [
         {
         id:1,
