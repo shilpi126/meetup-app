@@ -1,6 +1,6 @@
-"use client"
+import { useState } from 'react'
+import axios from 'axios'
 
-import React, { useState } from 'react'
 
 const NewMeetupForm = () => {
     
@@ -9,11 +9,21 @@ const NewMeetupForm = () => {
     const [address,setAddress] = useState("")
     const [url,setUrl] = useState("")
 
-    const handleFormSubmit = (e) => {
-        e.preventDefault()
 
-        console.log(title,description,address,url)
-    }
+
+    const handleFormSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const data = { title, description, address, url };
+      
+        const res = await axios.post('/api/new-meet', data);
+        
+      
+      } catch (e) {
+        console.error(e);
+
+      }
+    };
 
   return (
     <div className='flex flex-col justify-center items-center m-4'>
@@ -74,3 +84,4 @@ const NewMeetupForm = () => {
 }
 
 export default NewMeetupForm
+

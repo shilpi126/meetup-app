@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import React from 'react'
 
 const MeetupList = (props) => {
-    //console.log(props)
+    console.log(props)
 
     const router = useRouter()
 
